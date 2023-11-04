@@ -1,7 +1,7 @@
 // Listen for the button click event
 document.getElementById('verify-button').addEventListener('click', function() {
     // Trigger the Google authentication flow using hello('google').login
-    hello('google').login({ scope: 'email' }).then(function(authResponse) {
+    hello('google').login({ scope: 'email', redirect_uri: 'https://studynchill-verification.vercel.app/' }).then(function(authResponse) {
         // Handle the authentication response
         handleAuthenticationResponse(authResponse);
     }).catch(function(error) {
